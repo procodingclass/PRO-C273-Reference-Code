@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "Bijoya Chowdhury",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -75.33, "left": 17.34, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 148.88, "left": -43.59, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -51.35, "left": 327.32, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -304.95,
+      "left": 154.01,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -200.32,
+      "left": 131.35,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -199.9,
+      "left": 154.54,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -197.86,
+      "left": 194.29,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "ir1:GND", "uno:GND.2", "black", [ "v23.32", "h193.2" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v13.32", "h187.6" ] ],
+    [ "rgb1:R", "r1:1", "red", [ "v0" ] ],
+    [ "rgb1:COM", "uno:GND.1", "black", [ "v19.25", "h-42" ] ],
+    [ "r1:2", "uno:11", "red", [ "h0" ] ],
+    [ "rgb1:G", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "uno:10", "green", [ "h0" ] ],
+    [ "rgb1:B", "r3:1", "blue", [ "v10.89", "h30.51" ] ],
+    [ "r3:2", "uno:9", "blue", [ "h-0.48", "v60.17", "h-46.88" ] ],
+    [ "ir1:DAT", "uno:6", "green", [ "v6.59", "h309.24", "v-330.2", "h-94.78" ] ]
+  ]
+}
